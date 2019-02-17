@@ -1,0 +1,40 @@
+### misc commands ###
+touch .gitignore 	
+.gitignore 		# used for telling git to ignore the given files.
+
+### git commands ###
+git init
+git clone <remote URL>
+git add
+git add -A 		# add all files to staging
+git status
+git log
+git reset 		# remove files. Remove all if no options given
+git commit -m "message for commit"
+git clone <url> <where to clone>
+git clone --bare <project_name> <filename>.git		#create a bare repository
+
+#### example to simulate a remote repository in local system
+#### let's say the following folder exists: parent-folder/remote-repo
+#### run the following command to create a .git file
+$ cd parent-folder
+parent-folder $ git clone --bare remote-repo remote-repo-git-file.git
+#### this will create the .git file in the 'parent-folder'.
+#### this .git file can now be cloned to a new local repository.
+parent-folder $ mkdir local-cloned-repo
+parent-folder/local-cloned-repo $ git clone ../remote-repo-git-file.git
+#### the .git file will be the remote repo for the newly created repo.
+#### this can be verified by running the following command:
+parent-folder/local-cloned-repo $ git remote -v
+
+git diff
+git branch <name-of-branch>
+git checkout <name-of-branch>
+git push <remote repository> <remote branch>
+git pull <remote repository> <remote branch>
+
+#### to delete a branch from local repository
+git branch -d <branch-name>
+
+#### to delete a branch from remote repository
+git push <remote-repository-name> --delete <remote-branch-name>
