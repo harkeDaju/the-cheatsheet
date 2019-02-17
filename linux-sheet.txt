@@ -1,0 +1,5 @@
+### linux commands ###
+ls
+ls -la
+rm -rf .git
+touch <filename>
